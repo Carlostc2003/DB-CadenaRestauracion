@@ -2,6 +2,8 @@
 
 ![Modelo EER Cadena de Restauración](ModeloEER.png)
 
+---
+
 - `LOCAL.dirección` se indica como un atributo compuesto, ya que guarda partes de la dirección en subatributos.
 - `LOCAL.nombre` se indica como un atributo opcional, ya que no todos los locales pueden tener nombre.
 - `TRABAJADOR` es una generalización disjunta y parcial, debido a que pueden existir más tipos de trabajadores y solo un trabajador puede ejercer una única profesión. De él derivan subtipos como `COCINERO`.
@@ -12,13 +14,19 @@
 - `CLIENTE_FIDELIZADO.edad` es un atributo derivado que se obtiene a partir de `CLIENTE_FIDELIZADO.fecha_nacimiento`.
 - `COCINERO.cantPedidosR` y `CAJERO.cantPedidosA` son atributos derivados, obtenidos de otros datos y no se representan directamente en el modelo.
 
+---  
+
 Puedes interactuar con el modelo utilizando **ERDPlus** https://erdplus.com.  
 Solo tienes que abrir el archivo [`ModeloEER.erdplus`](ModeloEER.erdplus) y cargarlo en la herramienta para editar, visualizar o exportar el diagrama de manera dinámica.  
 
-
+---
     
 
 ## MODELO RELACIONAL
+
+![Modelo Relacional Cadena de Restauración](ModeloRelacional.png)
+
+---
 
 PAIS (`codigo_iso`, `nombre`, `moneda`, `poblacion`)  
 **PK:** (`codigo_iso`)
