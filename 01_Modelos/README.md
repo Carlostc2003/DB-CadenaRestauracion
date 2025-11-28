@@ -1,3 +1,5 @@
+## MODELO ENTIDAD RELACIÓN EXTENDIDO
+
 ![Modelo EER Cadena de Restauración](ModeloEER.png)
 
 - `LOCAL.dirección` se indica como un atributo compuesto, ya que guarda partes de la dirección en subatributos.
@@ -11,4 +13,126 @@
 - `COCINERO.cantPedidosR` y `CAJERO.cantPedidosA` son atributos derivados, obtenidos de otros datos y no se representan directamente en el modelo.
 
 Puedes interactuar con el modelo utilizando **ERDPlus** https://erdplus.com.  
-Solo tienes que abrir el archivo [`ModeloEER.erdplus`](ModeloEER.erdplus) y cargarlo en la herramienta para editar, visualizar o exportar el diagrama de manera dinámica.
+Solo tienes que abrir el archivo [`ModeloEER.erdplus`](ModeloEER.erdplus) y cargarlo en la herramienta para editar, visualizar o exportar el diagrama de manera dinámica.  
+
+
+    
+
+## MODELO RELACIONAL
+
+PAIS (`codigo_iso`, `nombre`, `moneda`, `poblacion`)  
+**PK:** (`codigo_iso`)
+
+---
+
+PROVEEDOR (`nif`, `nombre`)  
+**PK:** (`nif`)
+
+---
+
+TELEFONO (`numero`, `nifProveedor*`)  
+**PK:** (`numero`)  
+**FK:** (`nifProveedor`) --> PROVEEDOR
+
+---
+
+PROVEER (`nifProveedor*`, `isoPais*`)  
+**PK:** (`nifProveedor`, `isoPais`)  
+**FK:** (`nifProveedor`) --> PROVEEDOR  
+**FK:** (`isoPais`) --> PAIS
+
+---
+
+RECETA (`id_receta`, `nombre`, `ingredientes`)  
+**PK:** (`id_receta`)
+
+---
+
+USAR (`idReceta*`, `isoPais*`)  
+**PK:** (`idReceta`, `isoPais`)  
+**FK:** (`idReceta`) --> RECETA  
+**FK:** (`isoPais`) --> PAIS
+
+---
+
+CLIENTE_FIDELIZADO (`dni`, `fecha_nacimiento`, `nombre`)  
+**PK:** (`dni`)
+
+---
+
+POSEER (`dniCliente*`, `isoPais*`)  
+**PK:** (`dniCliente`, `isoPais`)  
+**FK:** (`dniCliente`) --> CLIENTE_FIDELIZADO  
+**FK:** (`isoPais`) --> PAIS
+
+---
+
+LOCAL (`id_local`, `nombre`, `ciudad`, `calle`, `numero`, `codigo_postal`)  
+**PK:** (`id_local`)
+
+---
+
+ESTAR (`idLocal*`, `isoPais*`)  
+**PK:** (`idLocal`, `isoPais`)  
+**FK:** (`idLocal`) --> LOCAL  
+**FK:** (`isoPais`) --> PAIS
+
+---
+
+PEDIDO (`numero_pedido`, `idLocal*`, `fecha`, `nombre_cliente`, `dniCliente*`)  
+**PK:** (`numero_pedido`, `idLocal`)  
+**FK:** (`idLocal`) --> LOCAL  
+**FK:** (`dniCliente`) --> CLIENTE_FIDELIZADO
+
+---
+
+TRABAJADOR (`dni`, `nombre`, `idLocal*`)  
+**PK:** (`dni`)  
+**FK:** (`idLocal`) --> LOCAL
+
+---
+
+LIMPIEZA (`dniTrabajador*`)  
+**PK:** (`dniTrabajador`)  
+**FK:** (`dniTrabajador`) --> TRABAJADOR
+
+---
+
+LIMPIAR (`dniTrabajador*`, `idLocal*`)  
+**PK:** (`dniTrabajador`, `idLocal`)  
+**FK:** (`dniTrabajador`) --> LIMPIEZA  
+**FK:** (`idLocal`) --> LOCAL
+
+---
+
+ENCARGADO (`dniTrabajador*`)  
+**PK:** (`dniTrabajador`)  
+**FK:** (`dniTrabajador`) --> TRABAJADOR
+
+---
+
+TRABAJO (`idLocal*`, `dniTrabajador*`, `fecha`)  
+**PK:** (`idLocal`, `dniTrabajador`)  
+**FK:** (`idLocal`) --> LOCAL  
+**FK:** (`dniTrabajador`) --> ENCARGADO  
+**VNN:** (`idLocal`)  
+**VNN:** (`dniTrabajador`)
+
+---
+
+INCIDENCIA (`id_incidencia`, `descripcion`)  
+**PK:** (`id_incidencia`)
+
+---
+
+REGISTRAR (`idLocal*`, `dniTrabajador*`, `idIncidencia*`)  
+**PK:** (`idLocal`, `dniTrabajador`, `idIncidencia`)  
+**FK:** (`idLocal`, `dniTrabajador`) --> TRABAJO  
+**FK:** (`idIncidencia`) --> INCIDENCIA
+
+---
+
+INGREDIENTE (`id`, `idReceta*`)  
+**PK:** (`id`)  
+**FK:** (`idReceta`) --> RECETA
+
