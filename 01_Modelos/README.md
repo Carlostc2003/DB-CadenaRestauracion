@@ -144,3 +144,6 @@ INGREDIENTE (`id`, `idReceta*`)
 **PK:** (`id`)  
 **FK:** (`idReceta`) --> RECETA
 
+---
+
+Puedes interactuar con el modelo utilizando este enlace de [DBDiagram.io](https://dbdiagram.io/d/692a11abd6676488bad8b043)
