@@ -95,7 +95,6 @@ CREATE TABLE LOCAL (
     CONSTRAINT PK_LOCAL PRIMARY KEY (id_local)
 );
 
-
 CREATE TABLE ESTAR (
     idLocal INT UNSIGNED,
     isoPais CHAR(2),
