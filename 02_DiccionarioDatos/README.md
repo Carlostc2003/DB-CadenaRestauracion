@@ -75,6 +75,7 @@
 | `fecha`         | DATE          |            | Fecha del pedido      |
 | `nombre_cliente`| VARCHAR(128)  |            | Nombre del cliente    |
 | `dniCliente`    | CHAR(9)       | FK         | Cliente asociado      |
+| `total_precio`    | DECIMAL(10,2)       | FK         | Cliente asociado      |
 
 ## TRABAJADOR
 | Columna  | Tipo de Datos | Restriccion | Descripcion           |
