@@ -16,6 +16,7 @@
 
 - 03_SQL/  
    ├── DDL/[`script.sql`](https://raw.githubusercontent.com/Carlostc2003/DB-CadenaRestauracion/main/03_SQL/DDL/script.sql)  
+   ├── DDL/[`empty_tables.sql`](https://raw.githubusercontent.com/Carlostc2003/DB-CadenaRestauracion/main/03_SQL/DDL/empty_tables.sql)  
    └── DML/[`script.sql`](https://raw.githubusercontent.com/Carlostc2003/DB-CadenaRestauracion/main/03_SQL/DML/script.sql)  
 
 - [`LICENSE`](https://github.com/Carlostc2003/DB-CadenaRestauracion/blob/main/LICENSE)  
