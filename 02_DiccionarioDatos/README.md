@@ -5,7 +5,7 @@
 |-------------|---------------|------------|-------------------------|
 | `codigo_iso`  | CHAR(2)       | PK         | Identificador de pais   |
 | `nombre`      | VARCHAR(64)   |            | Nombre del pais         |
-| `moneda`      | CHAR(1)       |            | Moneda del pais         |
+| `moneda`      | CHAR(3)       |            | Moneda del pais         |
 | `poblacion`   | INT           |            | Cantidad de poblacion   |
 
 ## PROVEEDOR
