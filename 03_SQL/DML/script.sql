@@ -110,13 +110,13 @@ INSERT INTO LOCAL (id_local, nombre, ciudad, calle, numero, codigo_postal) VALUE
 (1, 'Central Deli', 'New York', '5th Avenue', '101', '10001'),
 (2, 'La Tapita', 'Madrid', 'Calle Gran Vía', '15', '28013'),
 (3, 'Bistro Parisien', 'París', 'Rue de Rivoli', '8', '75001'),
-(4, 'Sakura Sushi', 'Tokio', 'Shibuya', '22', '150002'),
+(4, 'Sakura Sushi', 'Tokio', 'Shibuya', '22', '15002'),
 (5, 'Pokemon Cafe', 'Osaka', 'Dotonbori', '1234', '80331'),
 (6, 'Dragon Wok', 'Beijing', 'Wangfujing', '10', '10006'),
 (7, 'Harbour Cafe', 'Sydney', 'George Street', '55', '02000'),
-(8, 'Laksa House', 'Singapur', 'Orchard Road', '77', '238841'),
+(8, 'Laksa House', 'Singapur', 'Orchard Road', '77', '23841'),
 (9, 'Alpine Fondue', 'Zúrich', 'Bahnhofstrasse', '12', '08001'),
-(10, 'Dim Sum Corner', 'Hong Kong', 'Nathan Road', '30', '999077');
+(10, 'Dim Sum Corner', 'Hong Kong', 'Nathan Road', '30', '99077');
 
 INSERT INTO ESTAR (idLocal, isoPais) VALUES
 (1, 'US'),
