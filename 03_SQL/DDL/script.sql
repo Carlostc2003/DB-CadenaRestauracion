@@ -9,7 +9,7 @@ USE CadenaRestauracion;
 CREATE TABLE PAIS (
     codigo_iso CHAR(2),
     nombre VARCHAR(64),
-    moneda char(3), 
+    moneda CHAR(3), 
     poblacion INT,
     CONSTRAINT PK_PAIS PRIMARY KEY (codigo_iso)
 );
