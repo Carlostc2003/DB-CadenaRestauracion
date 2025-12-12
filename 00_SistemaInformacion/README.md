@@ -1,4 +1,4 @@
-# Cadena de Restauración KFC
+# Cadena de Restauración
 
 La cadena de restauración cuenta con varios locales distribuidos por muchos países. Cada país cuenta con muchos locales,  
 en los cuales, de cada país se quiere almacenar las recetas que se ofrecen, su nombre, moneda, población y código ISO.  
