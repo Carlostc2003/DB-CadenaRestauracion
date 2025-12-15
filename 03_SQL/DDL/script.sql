@@ -10,7 +10,7 @@ CREATE TABLE PAIS (
     codigo_iso CHAR(2),
     nombre VARCHAR(64),
     moneda CHAR(3), 
-    poblacion INT,
+    poblacion BIGINT,
     CONSTRAINT PK_PAIS PRIMARY KEY (codigo_iso)
 );
 
@@ -80,7 +80,7 @@ CREATE TABLE CLIENTE_FIDELIZADO (
     nombre VARCHAR(128),
     fecha_nacimiento DATE,
     -- CREA UNA COLUMNA VIRTUAL - CALCULO OBTENIDO MEDIANTE (FECHA ACTUAL - FECHA_NACIMIENTO)
-    edad INT AS (TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE())) VIRTUAL,
+    edad TINYINT AS (TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE())) VIRTUAL,
     CONSTRAINT PK_CLIENTE_FIDELIZADO PRIMARY KEY(dni)
 );
 
